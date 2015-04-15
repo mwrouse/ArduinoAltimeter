@@ -1,3 +1,8 @@
+// Program: Arduino Altimeter
+// Author: Michael Rouse
+// Date: 4/2015
+// Contact: michael@michaelrouse.net
+
 #include <Wire.h>
 #include "MPL3115A2.h"
 #include "SevSeg.h"

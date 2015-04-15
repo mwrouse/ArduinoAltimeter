@@ -1,3 +1,8 @@
+// Program: Arduino Graph
+// Author: Michael Rouse
+// Date: 4/2015
+// Contact: michael@michaelrouse.net
+
 import processing.serial.*;
 
 
