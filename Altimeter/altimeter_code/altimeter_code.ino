@@ -74,10 +74,10 @@ void setup()
   // Get base altitude level
   baseAltitude = getBaseAltitude();
   
+  printString("HOLD", 1000);
+  
   // Show that the altimeter is ready
   printString("REDY", 200);
-  
-  printString("HOLD", 1000);
   
   timer = millis();
  
