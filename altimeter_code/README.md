@@ -1,7 +1,7 @@
 # Altimeter Code
 ===
 This is the code that will be uploaded directly to your Altimeter.
-===
+-
 
 This project will still be maintained for who knows how long.
 
