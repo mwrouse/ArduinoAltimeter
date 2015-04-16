@@ -1,6 +1,7 @@
 # Altimeter Graph
 ===
 This is the program that will be ran on your computer to graph the data
+
 -
 
 This project will still be maintained for who knows how long.
