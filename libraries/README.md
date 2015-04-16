@@ -4,7 +4,7 @@ These are the required libraries to use this program.
 
 Copy all the folders in here to Documents\Arduino\libraries so you can use them.
 
----
+-
 
 This project will still be maintained for who knows how long.
 
