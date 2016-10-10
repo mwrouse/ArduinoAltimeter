@@ -1,8 +1,3 @@
-// Program: Arduino Altimeter
-// Author: Michael Rouse
-// Date: 4/2015
-// Contact: michael@michaelrouse.net
-
 #include <Wire.h>
 #include "MPL3115A2.h"
 #include "SevSeg.h"
@@ -31,7 +26,7 @@ bool apogeeDetected = false;
 bool logging = false; // True when logging data
 int flightLog[500]; // Collection of flight data
 unsigned int timer;
-int logIndex = 0;
+int logIndex = 2;
 int logDisplay = 0;
 
 // Constants
@@ -39,7 +34,7 @@ const int ERROR_MARGIN = 1; // 1m needs to change before it's detected
 const int LAUNCH_MARGIN = 2; // 2m needs to change in the positive direction for a launch to be detected
 const int APOGEE_MARGIN = 2; // 3m needs to change from the max alt for apogee detection
 const int TIMER_BEAT = 200; // Every 200ms
-const int FLIGHT_TIME = 29;
+const int FLIGHT_TIME = 99;
 
 
 // Setup Function
@@ -71,16 +66,21 @@ void setup()
   Serial.print(apogee);
   Serial.println(" ft.");*/
   
+  printString("HOLD", 500);
+  
   // Get base altitude level
   baseAltitude = getBaseAltitude();
   
-  printString("HOLD", 1000);
+  printString("HOLD", 500);
   
   // Show that the altimeter is ready
   printString("REDY", 200);
   
+  
   timer = millis();
- 
+  
+  flightLog[0] = 0;
+  flightLog[1] = 0;
 }
 
 // Program loop
@@ -103,7 +103,8 @@ void loop()
       maxAltitude = altitude;
       //LogData();
     }
-     
+    
+    // Check for new base altitude
     if (!launched && altitude <= (baseAltitude - ERROR_MARGIN))
     {
        //baseAltitude = altitude;
